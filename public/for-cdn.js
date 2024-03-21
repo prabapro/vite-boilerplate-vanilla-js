@@ -1,0 +1,1 @@
+function addNumbers(e,n){return e+n}function isEven(e){return e%2==0}console.log("sample file can be hosted in a cdn like jsdelivr."),console.log(addNumbers(5,3)),console.log(isEven(6));

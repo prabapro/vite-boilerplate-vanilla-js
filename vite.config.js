@@ -1,6 +1,7 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import { ViteMinifyPlugin } from 'vite-plugin-minify';
+// import { minify as minifyJs } from 'terser'; //Enable when needed to use 'custom-plugin-copy-file-for-cdn'
 import handlebars from 'vite-plugin-handlebars';
 import eslint from 'vite-plugin-eslint';
 import fs from 'fs';
@@ -41,5 +42,21 @@ export default defineConfig({
     handlebars({
       partialDirectory: resolve(__dirname, 'src/partials'),
     }),
+    // Plugin to copy desired file to dist without appending hash to the file name - use case host in CDN like jsdelivr.
+    // {
+    //   name: 'custom-plugin-copy-file-for-cdn',
+    //   async generateBundle(_, bundle) {
+    //     const srcPath = resolve(__dirname, 'src/js/for-cdn.js');
+    //     const destPath = resolve(__dirname, 'public/for-cdn.js');
+
+    //     if (fs.existsSync(srcPath)) {
+    //       const content = fs.readFileSync(srcPath, 'utf-8');
+    //       // Minify the content using Terser
+    //       const minifiedContent = await minifyJs(content);
+    //       fs.writeFileSync(destPath, minifiedContent.code); // Write the minified content to the destination file
+    //     }
+    //   },
+    // },
+    // End of custom plugin
   ],
 });
