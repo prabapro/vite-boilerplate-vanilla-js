@@ -29,6 +29,12 @@ export default defineConfig({
     rollupOptions: {
       input: generateInputObject(),
     },
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+      },
+    },
   },
   server: {
     port: 8080,
