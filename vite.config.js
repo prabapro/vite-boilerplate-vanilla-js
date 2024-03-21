@@ -1,6 +1,7 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import { ViteMinifyPlugin } from 'vite-plugin-minify';
+import handlebars from 'vite-plugin-handlebars';
 import eslint from 'vite-plugin-eslint';
 import fs from 'fs';
 
@@ -37,5 +38,8 @@ export default defineConfig({
       fix: true,
     }),
     ViteMinifyPlugin({}),
+    handlebars({
+      partialDirectory: resolve(__dirname, 'src/partials'),
+    }),
   ],
 });
