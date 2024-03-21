@@ -7,7 +7,7 @@ Inspired by [Barata-Ribeiro/vite-vanilla-js-template](https://github.com/Barata-
 - [vite-plugin-handlebars](https://github.com/alexlafroscia/vite-plugin-handlebars) - Use handlebars templates as html partials.
 
 > [!TIP]
-> The project is exposed as environment variable by extracting it from the `package.json` & can be used using below;
+> The project version extracted from `package.json` can be referenced in the code as an environment variable;
 >
 > ```shell
 > import.meta.env.VITE_PROJECT_VERSION
