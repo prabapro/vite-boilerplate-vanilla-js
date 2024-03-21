@@ -1,3 +1,5 @@
+// EXAMPLE CODE
+
 /* eslint-disable no-console */
 console.log('sample file can be hosted in a cdn like jsdelivr.');
 

@@ -22,6 +22,11 @@ function generateInputObject() {
 }
 
 export default defineConfig({
+  define: {
+    'import.meta.env.VITE_PROJECT_VERSION': JSON.stringify(
+      require('./package.json').version,
+    ),
+  },
   publicDir: 'public',
   root: resolve(__dirname, 'src'),
   build: {
@@ -48,18 +53,25 @@ export default defineConfig({
     handlebars({
       partialDirectory: resolve(__dirname, 'src/partials'),
     }),
-    // Plugin to copy desired file to dist without appending hash to the file name - use case host in CDN like jsdelivr.
+    // Plugin to copy desired file to dist without appending hash to the file name
+    // Use case: when hosting it on a CDN like jsdelivr.
     // {
     //   name: 'custom-plugin-copy-file-for-cdn',
     //   async generateBundle(_, bundle) {
-    //     const srcPath = resolve(__dirname, 'src/js/for-cdn.js');
-    //     const destPath = resolve(__dirname, 'public/for-cdn.js');
-
+    //     const srcPath = resolve(__dirname, 'src/js/for-cdn-example.js');
+    //     const destPath = resolve(__dirname, 'public/cdn-example.js');
     //     if (fs.existsSync(srcPath)) {
     //       const content = fs.readFileSync(srcPath, 'utf-8');
-    //       // Minify the content using Terser
-    //       const minifiedContent = await minifyJs(content);
-    //       fs.writeFileSync(destPath, minifiedContent.code); // Write the minified content to the destination file
+    //       const minifiedContent = await minifyJs(content, {
+    //         compress: {
+    //           drop_console: true,
+    //         },
+    //       });
+    //       fs.writeFileSync(destPath, minifiedContent.code);
+    //       const fileName = destPath.split('/').pop();
+    //       console.log(
+    //         `\n\n✅ File "${fileName}" minified and written to the public folder.\n`,
+    //       );
     //     }
     //   },
     // },
