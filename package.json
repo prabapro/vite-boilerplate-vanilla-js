@@ -21,17 +21,16 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.1.3",
     "postcss": "^8.4.37",
+    "postcss-import": "^16.1.0",
     "postcss-nesting": "^12.1.0",
     "prettier": "^3.2.5",
-    "sass": "^1.72.0",
+    "tailwindcss": "^3.4.1",
     "vite": "5.1.6",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-handlebars": "^2.0.0",
     "vite-plugin-minify": "^1.5.2"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.3",
     "the-new-css-reset": "^1.11.2"
   }
 }
