@@ -27,7 +27,7 @@ export default defineConfig({
       require('./package.json').version,
     ),
   },
-  publicDir: 'public',
+  publicDir: '../public',
   root: resolve(__dirname, 'src'),
   build: {
     outDir: '../dist',
